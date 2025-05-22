@@ -57,7 +57,8 @@ public class CursoController {
         Curso updatedCurso = cursoService.updateCurso(id, curso);
         return ResponseEntity.ok(updatedCurso);
      }
-
+    
+    @GetMapping("/profesores/{idProfesor}") 
     public ResponseEntity<List<Curso>>getCursosByIdProfesor(@PathVariable Long idProfesor) {
         List<Curso> cursos = cursoService.findCursosByIdProfesor(idProfesor);
         return ResponseEntity.ok(cursos);
